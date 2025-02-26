@@ -25,6 +25,8 @@ text-decoration:none ;
 margin-left: 45px;
 margin-right: 45px;
 margin-top: 2px;
+color: black;
+
 
 }
 
@@ -38,10 +40,13 @@ header{
  margin-right:152px ;  
 }
 
-.last{
+.last nav a {
     margin-top: 2px;
+    color:#4F4CEE ;
+    
 }
 .tytle{
    margin-top: 16px; 
+   color: #4F4CEE;
 }
 

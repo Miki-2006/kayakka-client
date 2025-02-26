@@ -17,6 +17,7 @@ const Header = () => {
                 <a href="# ">Conference </a>
                 <a href="# ">Movies </a>
                 <a href="# ">International </a>
+
             </nav>
             
             <div className={styles.last}>
@@ -27,6 +28,7 @@ const Header = () => {
              <a href="#">
                 Sign up
              </a>
+             
              </nav>
              
 
