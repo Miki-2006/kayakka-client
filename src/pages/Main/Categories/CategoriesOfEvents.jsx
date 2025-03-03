@@ -1,13 +1,26 @@
-import React from "react";
+import axios from "axios";
+import { useState } from "react";
 
 const CategoriesOfEvents = () => {
-    return (
-        <ol>
-            <li>Мирлан бул жерге озгортуу киргизди!!!</li>
-            <li>Мирлан бул жерге озгортуу киргизди!!!</li>
-            <li>Мирлан бул жерге озгортуу киргизди!!!</li>
-        </ol>
-    )
-}
+    const [categories, setCategories] = useState(null)
 
-export default CategoriesOfEvents
+  const getCategoriesFromServer = async () => {
+    const categories = await axios.get(
+      "https://kayakka-server.vercel.app/api/category"
+    ).then((res) => res);
+    setCategories(categories.data);
+  };
+  getCategoriesFromServer();
+  return (
+    <ul>
+        <li>Все</li>
+      {
+        categories && categories.map(el => (
+            <li key={el.id}>{el.name}</li>
+        ))
+      }
+    </ul>
+  );
+};
+
+export default CategoriesOfEvents;
