@@ -8,34 +8,23 @@ const Header = () => {
            
             <div className={styles.content}>
 
-                 <h1 className={styles.tytle}>Karsis.com </h1>
 
-            <nav>
-                
-                <a href="# ">Concerts </a>
-                <a href="# ">Arts </a>
-                <a href="# ">Conference </a>
-                <a href="# ">Movies </a>
-                <a href="# ">International </a>
+                 <h1 className={styles.tytle}> Kayakka </h1>
+                 <nav>
+                  <a href="#">
+                  Зарегистрироваться
+                    </a>
+                    <a href="#">
+                    Войти    
+                        </a>  
+                    
+                    
+                    </nav>   
 
-            </nav>
+
+            </div>
             
-            <div className={styles.last}>
-                <nav>
-                <a href="#">
-              Log In
-             </a>
-             <a href="#">
-                Sign up
-             </a>
-             
-             </nav>
-             
-
-
-            </div>
-
-            </div>
+            
 
 
         </header>
