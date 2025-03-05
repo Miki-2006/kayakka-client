@@ -1,0 +1,11 @@
+.categories{
+    display: flex;
+    justify-content: space-between;
+}
+.category{
+    list-style: none;
+}
+.category_active{
+    background-color: red;
+    list-style: none;
+}

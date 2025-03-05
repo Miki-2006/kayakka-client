@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import styles from './categories.module.css'
 
 const CategoriesOfEvents = () => {
     const [categories, setCategories] = useState(null)
@@ -12,11 +13,11 @@ const CategoriesOfEvents = () => {
   };
   getCategoriesFromServer();
   return (
-    <ul>
-        <li>Все</li>
+    <ul className={styles.categories}>
+        <li className={styles.category_active} >Все</li>
       {
         categories && categories.map(el => (
-            <li key={el.id}>{el.name}</li>
+            <li className={styles.category} key={el.id}>{el.name}</li>
         ))
       }
     </ul>
