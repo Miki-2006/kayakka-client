@@ -1,13 +1,13 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import CategoriesOfEvents from './pages/Main/Categories/CategoriesOfEvents';
+import Main from './pages/Main/Main';
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <CategoriesOfEvents/>
+      <Main/>
       <Footer/>
     </div>
   );
