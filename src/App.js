@@ -23,8 +23,8 @@ function App() {
         </>
       )} */}
       <Header />
-      <Main />
-      <Footer />
+      {/* <Main />
+      <Footer /> */}
     </div>
   );
 }
