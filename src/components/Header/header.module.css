@@ -1,0 +1,53 @@
+.header{
+    background-color:#FFFFFF;
+    max-width: 1444px;
+    margin:0px auto;
+   
+}
+
+.content{
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+
+.header-content__last{
+align-items: center;
+display: flex;
+text-decoration: none;
+
+
+}
+
+nav a{
+text-decoration:none ;
+margin-left: 45px;
+margin-right: 45px;
+margin-top: 2px;
+color: black;
+
+
+}
+
+header{
+    margin-top: 8px;
+    margin-right:35px ;
+}
+
+.cakhed{
+ margin-top: 8px; 
+ margin-right:152px ;  
+}
+
+.last nav a {
+    margin-top: 2px;
+    color:#4F4CEE ;
+    
+    
+}
+.tytle{
+   margin-top: 16px; 
+   color: #4F4CEE;
+}
+
