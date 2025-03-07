@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./categories.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,6 +11,7 @@ import {
 const CategoriesOfEvents = () => {
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.categories);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     const getCategoriesFromServer = async () => {
@@ -27,12 +28,26 @@ const CategoriesOfEvents = () => {
 
     getCategoriesFromServer();
   }, [dispatch]);
+
   return (
     <ul className={styles.categories}>
-      <li className={styles.category_active}>Все</li>
+      <li
+        className={`${styles.category} ${
+          activeIndex === null ? styles.active : ""
+        }`}
+        onClick={() => setActiveIndex(null)}
+      >
+        Все
+      </li>
       {categories &&
-        categories.map((el) => (
-          <li className={styles.category} key={el.id}>
+        categories.map((el, index) => (
+          <li
+            key={el.id}
+            className={`${styles.category} ${
+              activeIndex === index ? styles.active : ""
+            }`}
+            onClick={() => setActiveIndex(index)}
+          >
             {el.name}
           </li>
         ))}
