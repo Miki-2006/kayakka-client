@@ -1,33 +1,75 @@
-.card{
-    display: flex;
-    flex-direction: column;    
-    padding: 10px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    gap: 10px;
-    width: min-content;
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  gap: 10px;
+  width: min-content;
 }
-.card img{
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
+.card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 }
-.card_bottom{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.card_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.date span{
+.date span {
+  margin-left: 10px;
+}
+.money span {
+  margin-left: 5px;
+}
+.event b {
+  margin-left: 5px;
+}
+.location span {
+  margin-left: 12px;
+}
+@media (max-width: 720px) {
+  .card {
+    gap: 8px;
+  }
+  .card img {
+    width: 180px;
+    height: 260px;
+  }
+  .date span {
+    margin-left: 8px;
+  }
+  .money span {
+    margin-left: 3px;
+  }
+  .event b {
+    margin-left: 3px;
+  }
+  .location span {
     margin-left: 10px;
+  }
 }
-.money span{
-    margin-left: 5px;
-}
-.event b{
-    margin-left: 5px;
-}
-.location span{
-    margin-left: 12px;
+@media (max-width: 420px) {
+  .card {
+    gap: 5px;
+  }
+  .card img {
+    width: 150px;
+    height: 200px;
+  }
+  .date span {
+    margin-left: 6px;
+  }
+  .money span {
+    margin-left: 1px;
+  }
+  .event b {
+    margin-left: 1px;
+  }
+  .location span {
+    margin-left: 8px;
+  }
 }
