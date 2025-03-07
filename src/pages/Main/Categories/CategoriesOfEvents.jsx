@@ -8,7 +8,7 @@ import {
   fetchCategoriesFailure,
 } from "../../../features/categorySlice";
 
-const CategoriesOfEvents = () => {
+const CategoriesOfEvents = ({ setSelectedCategory }) => {
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.categories);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -29,24 +29,29 @@ const CategoriesOfEvents = () => {
     getCategoriesFromServer();
   }, [dispatch]);
 
+  const handleCategoryClick = (categoryId, index) => {
+    setSelectedCategory(categoryId); // Передаем выбранную категорию в родительский компонент
+    setActiveIndex(index);
+  };
+
   return (
     <ul className={styles.categories}>
       <li
         className={`${styles.category} ${
           activeIndex === null ? styles.active : ""
         }`}
-        onClick={() => setActiveIndex(null)}
+        onClick={() => handleCategoryClick(null, null)}
       >
         Все
       </li>
       {categories &&
-        categories.map((el, index) => (
+        categories.map((el) => (
           <li
             key={el.id}
             className={`${styles.category} ${
-              activeIndex === index ? styles.active : ""
+              activeIndex === el.id ? styles.active : ""
             }`}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => handleCategoryClick(el.id, el.id)}
           >
             {el.name}
           </li>
