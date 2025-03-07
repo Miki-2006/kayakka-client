@@ -51,3 +51,8 @@ header{
    color: #4F4CEE;
 }
 
+@media(max-width: 900px){
+    .tytle{
+        color: red;
+    }
+}

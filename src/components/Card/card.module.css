@@ -3,16 +3,28 @@
     flex-direction: column;    
     padding: 10px;
     border-radius: 10px;
-    background-color: gainsboro;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     gap: 10px;
-    width: max-content;
+    width: min-content;
 }
 .card img{
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
+    border-radius: 10px;
 }
 .card_bottom{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+}
+.date span{
+    margin-left: 10px;
+}
+.money span{
+    margin-left: 5px;
+}
+.event b{
+    margin-left: 5px;
 }
