@@ -1,106 +1,38 @@
-.header{
-    background-color:#FFFFFF;
-    max-width: 1440px;
-    display: flex;
-    justify-content: space-between;
+.header {
+  background-color: #fff;
+  padding: 0px 2%;
+  max-width: 980px;
+  border-bottom: 0.1px solid #f4efef;
 }
 .content {
-    display: flex;
-    justify-content: space-between; /* Элементтердин ортосунда тең аралыктарды түзүү */
-    align-items: center; /* Элементтерди вертикалдуу борборго жайгаштыруу */
-    padding: 5px; /* Контейнердин ичиндеги отступ */
-  }
-  
-  .title {
-    font-size: 6vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
-    text-align: center;
-  }
-  .link {
-    gap: 10px;
-  }
-  .link a{
-    font-size: 1.5vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
-    color: #007bff;
-    text-decoration: none;
-    /* margin: 0 3%; Элементтердин ортосундагы отступ, % менен */
-  }
-  
-  .link a:hover {
-    text-decoration: underline; /* Курсорду шилтеменин үстүнө койгондо сызык пайда болот */
-  }
-  
-  @media (max-width: 768px) {
-    .content {
-      padding: 4vw; /* Мобилдик түзмөктөр үчүн контейнердин ичиндеги отступту көбөйтүү */
-    }
-  
-    .title {
-      font-size: 8vw; /* Мобилдик түзмөктөр үчүн титулдун өлчөмүн көбөйтүү */
-    }
-  
-   .link a {
-      font-size: 1.5vw; /* Мобилдик түзмөктөр үчүн шилтемелердин өлчөмүн чоңойтуу */
-      margin: 0 5%; /* Мобилдик түзмөктөр үчүн шилтемелердин ортосундагы отступту чоңойтуу */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .content {
-      padding: 6vw; /* Кичинекей экрандар үчүн контейнердин ичиндеги отступту чоңойтуу */
-    }
-  
-    .title {
-      font-size: 10vw; /* Кичинекей экрандар үчүн титулдун өлчөмүн дагы чоңойтуу */
-    }
-  
-    .link a {
-      font-size: 1.5vw; /* Кичинекей экрандар үчүн шилтемелердин өлчөмүн дагы чоңойтуу */
-      margin: 0 5%; /* Кичинекей экрандар үчүн шилтемелердин ортосундагы отступту дагы көбөйтүү */
-    }
-  }
-  
-
-.header-content__last{
-align-items: center;
-display: flex;
-text-decoration: none;
-
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a{
-text-decoration:none ;
-margin-left: 45px;
-margin-right: 45px;
-margin-top: 2px;
-color: black;
-
-
+.tytle {
+  font-size: 2.3vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
+  text-align: center;
+  /* margin-top: 16px; */
+  color: #4f4cee;
+}
+.nav {
+  display: flex;
+  gap: 0.5vw;
+}
+.link {
+  font-size: 1.1vw;
+  font-weight: 600; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
+  color: #007bff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+  background: transparent;
+  padding: 0.5vh 2vw;
+  border: 1px solid #007bff;
 }
 
-header{
-    margin-top: 8px;
-    margin-right:35px ;
-}
-
-.cakhed{
- margin-top: 8px; 
- margin-right:152px ;  
-}
-
-.last nav a {
-    margin-top: 2px;
-    color:#4F4CEE ;
-    
-    
-}
-.tytle{
-   margin-top: 16px; 
-   color: #4F4CEE;
-}
-
-@media(max-width: 900px){
-    .tytle{
-        color: red;
-    }
+.link:hover {
+  color: #fff;
+  background: #4a90e2;
 }
