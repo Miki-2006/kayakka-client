@@ -10,18 +10,12 @@ const Header = () => {
             <div className={styles.content}>
 
 
-                 <h1 className={styles.tytle}> Kayakka </h1>
-                 <nav>
-                  <a href="#">
-                  Зарегистрироваться
-                    </a>
-                    <a href="#">
-                    Войти    
-                        </a>  
-                    
-                    
-                    </nav>   
-
+                <h1 className={styles.tytle}> Kayakka</h1>
+                <div className={styles.link}>
+                    <a href="#"> Зарегистрироваться</a>
+                    <a href="#">Войти </a>
+                </div>
+ 
 
             </div>
             
