@@ -1,19 +1,23 @@
-import { useSelector } from "react-redux";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./pages/Main/Main";
 import Sceleton from "./loaders/Sceleton";
+import { useEffect, useState } from "react";
 
 function App() {
-  const loadingEvents = useSelector((state) => state.events.loading);
-  const loadingCategories = useSelector((state) => state.categories.loading);
-  // const loading = useSelector((state) => state.sceleton.loading);
-  // if(loadingCategories && loadingEvents) return <Sceleton/>
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Симулируем задержку для загрузки данных
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Убираем скелетон через 2 секунды (для примера)
+  }, []);
 
   return (
     <div className="App">
-      {/* {loading ? (
+      {loading ? (
         <Sceleton />
       ) : (
         <>
@@ -21,10 +25,7 @@ function App() {
           <Main />
           <Footer />
         </>
-      )} */}
-      <Header />
-      {/* <Main />
-      <Footer /> */}
+  )}
     </div>
   );
 }

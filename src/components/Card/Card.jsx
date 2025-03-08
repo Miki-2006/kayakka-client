@@ -4,6 +4,7 @@ import {
   faCalendarDays,
   faMoneyBill1,
   faTicket,
+  faLocationDot
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ el }) => {
@@ -46,6 +47,13 @@ const Card = ({ el }) => {
             style={{ color: "#4a90e2", fontSize: "18px" }}
           />
           <span>{formatDate(el.event_date)}</span>
+        </div>
+        <div className={styles.location}>
+          <FontAwesomeIcon
+            icon={faLocationDot}
+            style={{ color: "#4a90e2", fontSize: "18px" }}
+          />
+          <span>{el.venue}</span>
         </div>
       </div>
     </div>
