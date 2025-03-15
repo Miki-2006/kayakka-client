@@ -1,0 +1,188 @@
+/* Глобальные стили */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Основной контейнер */
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Блок формы */
+.login_box {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Логотип */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.logo_icon {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.logo_text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Заголовок формы */
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/* Поля ввода */
+.input_group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input_group input {
+  width: 77%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.input_group .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+/* Опции (чекбокс + ссылка) */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+}
+
+.options input {
+  margin-right: 6px;
+}
+
+.forgot_password {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.forgot_password:hover {
+  text-decoration: underline;
+}
+
+/* Кнопка входа */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sign_in {
+  background: #3b82f6;
+  color: white;
+  margin-top: 16px;
+}
+
+.sign_in:hover {
+  background: #2563eb;
+}
+
+/* Разделитель OR */
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #d1d5db;
+  margin: 0 12px;
+}
+
+/* Социальные кнопки */
+.social_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.social_btn:hover {
+  background: #f3f4f6;
+}
+
+.google .social-icon {
+  color: #db4437;
+}
+
+.facebook .social-icon {
+  color: #1877f2;
+}
+
+/* Ссылка на регистрацию */
+.signup_text {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+.signup_link {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.signup_link:hover {
+  text-decoration: underline;
+}
