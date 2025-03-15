@@ -1,7 +1,16 @@
-body{
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap");
+body {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-family: "Manrope", sans-serif;
+}
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

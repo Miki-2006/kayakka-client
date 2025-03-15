@@ -5,12 +5,19 @@ import { Provider } from "react-redux";
 import store from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import {BrowserRouter, Route, Routes} from 'react-router'
+import Event from "./components/Event/Event";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App/>}/>
+          <Route path="/event/:id" element={<Event/>}/>
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

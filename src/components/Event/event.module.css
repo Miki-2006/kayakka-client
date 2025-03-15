@@ -1,0 +1,74 @@
+.loader{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticket {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticketContainer {
+  display: flex;
+  gap: 50px;
+  width: 70vw;
+  height: auto;
+  background: #5669ff;
+  position: relative;
+  border-radius: 1%;
+  padding: 5vh 2vw;
+}
+.ticketLeft {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticketImage {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 0px 200px 0 rgba(148, 46, 46, 0.16);
+}
+.ticketRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ticketContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.ticketFooter a {
+  color: white;
+  text-decoration: none;
+}
+.ticketInfo,
+.ticketPrice,
+.ticketFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+}
+.ticketInfo svg,
+.ticketPrice svg,
+.ticketFooter svg {
+  background-color: #3d56f0;
+  padding: 3.5%;
+  border-radius: 50%;
+}
+.ticketInfo p {
+  white-space: normal;
+}
+
+

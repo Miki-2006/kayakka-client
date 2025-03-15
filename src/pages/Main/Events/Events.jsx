@@ -7,11 +7,13 @@ import {
   fetchEventsFailure,
   fetchEventsStart,
   fetchEventsSuccess,
-} from "../../../features/eventSlice";
+} from "../../../features/eventsSlice";
+import { Link } from "react-router";
+import Sceleton from "../../../loaders/Sceleton";
 
-const Events = ({selectedCategory}) => {
+const Events = ({ selectedCategory }) => {
   const dispatch = useDispatch();
-  const { events } = useSelector((state) => state.events);
+  const {events, loading} = useSelector((state) => state.events);
 
   useEffect(() => {
     const getEventsByCategory = async () => {
@@ -31,9 +33,13 @@ const Events = ({selectedCategory}) => {
     getEventsByCategory();
   }, [dispatch, selectedCategory]); // перезапускать запрос при изменении категории
 
+  if(loading) return <div className={styles.sceleton}><Sceleton/></div>
+
   return (
     <div className={styles.events}>
-      {events && events.map((el, indx) => <Card el={el} key={indx} />)}
+      {events && events.map((el, indx) => (
+        <Link key={indx} to={`/event/${el.id}`} style={{textDecoration:"none"}}><Card el={el} /></Link>
+      ))}
     </div>
   );
 };

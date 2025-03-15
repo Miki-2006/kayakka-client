@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import eventSlice from "../features/eventSlice";
+import eventsSlice from "../features/eventsSlice";
 import categoriesSlice from "../features/categorySlice";
+import eventSlice from "../features/eventSlice";
 
 const store = configureStore({
   reducer: {
-    events: eventSlice.reducer,
-    categories: categoriesSlice.reducer
+    events: eventsSlice.reducer,
+    categories: categoriesSlice.reducer,
+    event: eventSlice.reducer
   },
 });
 

@@ -2,11 +2,11 @@ import React from "react";
 import ContentLoader from "react-content-loader";
 
 const Sceleton = ({
-  width = 1366,
-  heading = { width: 140, height: 24 },
+  width = 900,
+  heading = { width: 80, height: 24 },
   row = 2,
-  column = 5,
-  padding = 12,
+  column = 4,
+  padding = 5,
   borderRadius = 4,
   ...props
 }) => {

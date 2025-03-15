@@ -1,31 +1,32 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./pages/Main/Main";
-import Sceleton from "./loaders/Sceleton";
-import { useEffect, useState } from "react";
+import { ScaleLoader } from "react-spinners";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Симулируем задержку для загрузки данных
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Убираем скелетон через 2 секунды (для примера)
+    }, 2000);
   }, []);
+
+
+  if (loading)
+    return (
+      <div className="loader">
+        <ScaleLoader color="#5669ff" />
+      </div>
+    );
 
   return (
     <div className="App">
-      {loading ? (
-        <Sceleton />
-      ) : (
-        <>
-          <Header />
-          <Main />
-          {/* <Footer /> */}
-        </>
-  )}
+      <Header />
+      <Main />
+      {/* <Footer /> */}
     </div>
   );
 }
