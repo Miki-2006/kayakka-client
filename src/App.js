@@ -25,7 +25,8 @@ function App() {
           <Main />
           {/* <Footer /> */}
         </>
-  )}
+      )}
+      
     </div>
   );
 }
