@@ -6,7 +6,7 @@ import store from "./app/store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import Event from "./components/Event/Event";
+import Event from "./components/EventIdivid/Event";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Login from "./pages/Main/Registration/Login";
 import Signin from "./pages/Main/Registration/Signin/Signin";
