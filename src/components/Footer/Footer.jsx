@@ -1,73 +1,50 @@
-import React from "react";
 import styles from "./footer.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSquareWhatsapp,
+  faTelegram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div>
-        <div>
-          <b>Abaut</b>
-          <span>Abaut Karcis.com</span>
-          <span>How it works</span>
-          <span>Careers</span>
-          <span>press</span>
-          <span>Blog</span>
-          <span>Forum</span>
-          <div>
-            <div>
-                <div>
-                    <b>Abaut</b>
-                    <span>Abaut Karcis.com</span>
-                    <span>How it works</span>
-                    <span>Careers</span>
-                    <span>press</span>
-                    <span>Blog</span>
-                    <span>Forum</span>
-                <div>
-                    <div>
-                    <b>Partner with us</b>
-                    <span>Partnership programs</span>
-                    <span>Affiliate program</span>
-                    <span>Connectivity parthers</span>
-                    <span>Promotions and events</span>
-                    <span>Integrations</span>
-                    <span>Community</span>
-                    <span>Loyalty program</span>
-                    </div>
-                    <div>
-                    <b>Support</b>
-                    <span>Help Center</span>
-                    <span>Contact us</span>
-                    <span>privacy policy</span>
-                    <span>Terms of service</span>
-                    <span>Trust and safety</span>
-                    <span>Accessibility</span>
-                    </div>
-                    <div>
-                    <b>Get the app</b>
-                    <span>Karcis.com for Android</span>
-                    <span>Karics.com for iOS</span>
-                    <span>Mobile site</span>
-                    </div>
+      <div className={styles.container}>
+        <div className={styles.contact}>
+          <p className={styles.text}>Свяжитесь с нами</p>
+          <p>
+            Email:{" "}
+            <a href="mailto:kayakka@gmail.com" className={styles.link}>
+              kayakka@gmail.com
+            </a>
+          </p>
+          <p>
+            Телефон:{" "}
+            <a href="tel:+996551007746" className={styles.link}>
+              +996551007746
+            </a>
+          </p>
+        </div>
+        <div className={styles.left}>
+          <b className={styles.title}>Kayakka</b>
 
-                </div>
-            </div>
-            </div>
-            <div>
-              <b>Support</b>
-              <span>Help Center</span>
-              <span>Contact us</span>
-              <span>privacy policy</span>
-              <span>Terms of service</span>
-              <span>Trust and safety</span>
-              <span>Accessibility</span>
-            </div>
-            <div>
-              <b>Get the app</b>
-              <span>Karcis.com for Android</span>
-              <span>Karics.com for iOS</span>
-              <span>Mobile site</span>
-            </div>
+          <div className={styles.socials}>
+            <a
+              href="https://wa.link/rz1nxf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faSquareWhatsapp}
+                className={styles.whatsapp}
+              />
+            </a>
+            <a
+              href="https://t.me/mirlanrysbekov"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faTelegram} className={styles.telegram} />
+            </a>
           </div>
         </div>
       </div>

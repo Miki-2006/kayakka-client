@@ -1,0 +1,75 @@
+.footer {
+  background-color: #0077b5;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact {
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.link {
+  color: #4ea8de;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.whatsapp {
+  color: white;
+  font-size: 30px;
+  transition: color 0.3s;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.telegram {
+  color: white;
+  font-size: 30px;
+  transition: color 0.3s;
+}
+
+.title {
+  font-size: 1.5vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
+  text-align: center;
+  /* margin-top: 16px; */
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .contact {
+    text-align: left;
+  }
+}
