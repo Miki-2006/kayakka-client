@@ -8,7 +8,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ el }) => {
-  console.log(el.id === 28 ? el.image : '');
   
   const formatDate = (dateString) => {
     const date = new Date(dateString);
