@@ -42,7 +42,7 @@ const Events = ({ selectedCategory }) => {
 
   return (
     <div className={styles.events}>
-      {events
+      {events.length > 0
         ? events.map((el, indx) => (
             <Link
               key={indx}
