@@ -6,6 +6,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
 }
+.notData{
+    color: #4a90e2;
+    font-size: 25px;
+    font-weight: 700;
+}
 @media (max-width: 920px) {
     .events{
         grid-template-columns: 1fr 1fr 1fr;

@@ -13,7 +13,7 @@ import Sceleton from "../../../loaders/Sceleton";
 
 const Events = ({ selectedCategory }) => {
   const dispatch = useDispatch();
-  const {events, loading} = useSelector((state) => state.events);
+  const { events, loading } = useSelector((state) => state.events);
 
   useEffect(() => {
     const getEventsByCategory = async () => {
@@ -33,13 +33,26 @@ const Events = ({ selectedCategory }) => {
     getEventsByCategory();
   }, [dispatch, selectedCategory]); // перезапускать запрос при изменении категории
 
-  if(loading) return <div className={styles.sceleton}><Sceleton/></div>
+  if (loading)
+    return (
+      <div className={styles.sceleton}>
+        <Sceleton />
+      </div>
+    );
 
   return (
     <div className={styles.events}>
-      {events && events.map((el, indx) => (
-        <Link key={indx} to={`/event/${el.id}`} style={{textDecoration:"none"}}><Card el={el} /></Link>
-      ))}
+      {events
+        ? events.map((el, indx) => (
+            <Link
+              key={indx}
+              to={`/event/${el.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Card el={el} />
+            </Link>
+          ))
+        : <div className={styles.sceleton}><b className={styles.notData}>Здесь нету мероприятий</b></div>}
     </div>
   );
 };
