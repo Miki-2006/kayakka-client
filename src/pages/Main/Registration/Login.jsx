@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 import styles from "./login.module.css";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../features/authAction";
@@ -10,8 +9,13 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState(false)
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Инициализируем useNavigate
+
+  const navClick = () => {
+    navigate("/")
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +30,8 @@ const Login = () => {
       // Перенаправляем на главную страницу после успешного входа
       navigate("/"); // Переход на главную страницу
     } else {
-      console.error("Invalid credentials"); // Если аутентификация не прошла
+      console.error("Invalid credentials");
+      setError(true) // Если аутентификация не прошла
     }
   };
 
@@ -36,7 +41,7 @@ const Login = () => {
         <div className={styles.logo}>
           {/* Логотип */}
           <div className={styles.logo_icon}></div>
-          <h1 className={styles.logo_text}>Kayakka</h1>
+          <h1 className={styles.logo_text} onClick={navClick}>Kayakka</h1>
         </div>
 
         {/* Форма входа */}
@@ -46,13 +51,13 @@ const Login = () => {
             <FiMail className={styles.input} />
             <input
               type="email"
-              placeholder="@email.com"
+              placeholder="@gmail.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className={styles.input_group}>
-            <FiLock className={styles.input_group} />
+            <FiLock className={styles.input} />
             <input
               type="password"
               placeholder="Your password"
@@ -60,6 +65,8 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+
+          {error ? <b className={styles.error}>Неправильный пароль или gmail!</b>: ''}
 
           {/* Доп. настройки */}
           <div className={styles.options}>
@@ -71,9 +78,9 @@ const Login = () => {
               />
               Запомнить меня
             </label>
-            <a href="/forgot" className={styles.forgot_password}>
+            {/* <a href="/forgot" className={styles.forgot_password}>
               Забыли пароль?
-            </a>
+            </a> */}
           </div>
 
           {/* Кнопка входа */}
@@ -85,13 +92,6 @@ const Login = () => {
           <span>Или</span>
         </div>
 
-        {/* Кнопки соц. входа */}
-        <button className={styles.social_btn}>
-          <FaGoogle className={styles.google} /> Войти через Google
-        </button>
-        <button className={styles.social_btn}>
-          <FaFacebook className={styles.facebook} /> Войти через Facebook
-        </button>
 
         {/* Ссылка на регистрацию */}
         <p className={styles.signup_text}>

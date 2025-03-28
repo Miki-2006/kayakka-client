@@ -45,7 +45,7 @@ body {
 .logo_text {
   font-size: 24px;
   font-weight: 600;
-  color: #1f2937;
+  color: #3b82f6;
 }
 
 /* Заголовок формы */
@@ -65,20 +65,23 @@ body {
 .input_group input {
   width: 77%;
   padding: 12px 12px 12px 40px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #3b82f6;
   border-radius: 8px;
   font-size: 14px;
 }
 
-.input_group .icon {
+.input {
   position: absolute;
-  left: 12px;
+  left: 17px;
   top: 50%;
   transform: translateY(-50%);
   color: #9ca3af;
   font-size: 16px;
 }
-
+.error{
+  color: red;
+  
+}
 /* Опции (чекбокс + ссылка) */
 .options {
   display: flex;

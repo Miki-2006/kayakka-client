@@ -4,8 +4,15 @@ import {
   faSquareWhatsapp,
   faTelegram,
 } from "@fortawesome/free-brands-svg-icons";
+import { useNavigate } from "react-router";
 
 const Footer = () => {
+  const navigate = useNavigate()
+
+  const navClick = () => {
+    navigate("/")
+  }
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -25,7 +32,7 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.left}>
-          <b className={styles.title}>Kayakka</b>
+          <b className={styles.title} onClick={navClick}>Kayakka</b>
 
           <div className={styles.socials}>
             <a

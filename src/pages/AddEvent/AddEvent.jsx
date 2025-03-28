@@ -13,14 +13,14 @@ const AddEventForm = () => {
   const [location, setLocation] = useState({
     venue: "",
     address: "",
-    max_attendees: "",
+    max_attendees: 0,
   });
   const [organizer, setOrganizer] = useState({
     organization_name: "",
     website: "",
     user_id: userId,
   });
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [image, setImage] = useState(null);
 
   // Категории
@@ -153,12 +153,13 @@ const AddEventForm = () => {
           onChange={(e) => setLocation({ ...location, venue: e.target.value })}
           className={styles.input}
           required
-        />
+          />
 
         <label className={styles.label}>Адрес</label>
         <input
           type="text"
           value={location.address}
+          placeholder="улица, город"
           onChange={(e) =>
             setLocation({ ...location, address: e.target.value })
           }
@@ -173,13 +174,13 @@ const AddEventForm = () => {
           type="number"
           value={location.max_attendees}
           onChange={(e) =>
-            setLocation({ ...location, max_attendees: e.target.value })
+            setLocation({ ...location, max_attendees: Number(e.target.value) })
           }
           className={styles.input}
         />
 
         {/* Организатор */}
-        <label className={styles.label}>Название организации</label>
+        <label className={styles.label}>Название организации или instagram</label>
         <input
           type="text"
           value={organizer.organization_name}
@@ -190,10 +191,11 @@ const AddEventForm = () => {
           required
         />
 
-        <label className={styles.label}>Веб-сайт</label>
+        <label className={styles.label}>Веб-сайт(необязательно)</label>
         <input
           type="text"
           value={organizer.website}
+          placeholder="http://kayakka.com"
           onChange={(e) =>
             setOrganizer({ ...organizer, website: e.target.value })
           }
@@ -204,7 +206,7 @@ const AddEventForm = () => {
         <input
           type="number"
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPrice(Number(e.target.value))}
           className={styles.input}
         />
 
@@ -227,9 +229,9 @@ const AddEventForm = () => {
 
         <label className={styles.label}>Изображение мероприятия</label>
         <input
-          type="text"
-          // accept="image/*"
-          onChange={(e) => setImage(e.target.value)}
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
           className={styles.file}
           required
         />

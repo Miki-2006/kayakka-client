@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiUser, FiMail, FiLock, FiPhone } from "react-icons/fi";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
 import styles from "./signin.module.css"; // Импорт стилей для регистрации
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 
 const Signin = () => {
   const [name, setName] = useState("");
@@ -11,6 +11,12 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [role, setRole] = useState("user")
+
+  const navigate = useNavigate() // Инициализируем useNavigate
+
+  const navClick = () => {
+    navigate("/")
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +34,7 @@ const Signin = () => {
         "https://kayakka-server.vercel.app/api/auth/register",
         userData
       );
-
+      
       console.log(response.data);
     } catch (error) {
       if (error.response) {
@@ -44,8 +50,7 @@ const Signin = () => {
       <div className={styles.register_box}>
         <div className={styles.logo}>
           {/* Логотип */}
-          <div className={styles.logo_icon}></div>
-          <h1 className={styles.logo_text}>Kayakka</h1>
+          <h1 className={styles.logo_text} onClick={navClick}>Kayakka</h1>
         </div>
 
         {/* Заголовок формы */}
@@ -99,7 +104,7 @@ const Signin = () => {
             <FiPhone className={styles.input} />
             <input
               type="text"
-              placeholder="номер"
+              placeholder="+996 777 456 321"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -128,15 +133,6 @@ const Signin = () => {
             <span>Или</span>
           </div>
 
-          {/* Социальные кнопки */}
-          <button className={styles.social_btn}>
-            <FaGoogle className={styles.google} /> Зарегистрироваться через
-            Google
-          </button>
-          <button className={styles.social_btn}>
-            <FaFacebook className={styles.facebook} /> Зарегистрироваться через
-            Facebook
-          </button>
 
           {/* Ссылка на страницу входа */}
           <p className={styles.signup_text}>

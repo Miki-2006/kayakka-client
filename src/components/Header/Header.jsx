@@ -8,10 +8,14 @@ const Header = ({user}) => {
     navigate("/dashboard")
   }
 
+  const navClick = () => {
+    navigate("/")
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <h1 className={styles.tytle}> Kayakka</h1>
+        <h1 className={styles.tytle} onClick={navClick}> Kayakka</h1>
         <nav className={styles.nav}>
           {
             user !== null

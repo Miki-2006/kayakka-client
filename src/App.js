@@ -16,18 +16,6 @@ function App() {
     }, 2000);
   }, []);
 
-  // useEffect(() => {
-  //   const getTokenOfUser = async () => {
-  //     try {
-  //       const token = await axios.get("https://kayakka-server.vercel.app/api/auth/auto-login",{ withCredentials: true }).then(res => res.data)
-  //       console.log(token);
-        
-  //     } catch (err) {
-  //       console.error("Ошибка при получении токена:", err);
-  //     }
-  //   }
-  //   getTokenOfUser()
-  // }, [])
 
   if (loading) return <div className="loader"><ScaleLoader color="#5669ff" /></div>
 

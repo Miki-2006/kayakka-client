@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ el }) => {
+  console.log(el.id === 28 ? el.image : '');
+  
   const formatDate = (dateString) => {
     const date = new Date(dateString);
 
@@ -39,7 +41,7 @@ const Card = ({ el }) => {
             icon={faMoneyBill1}
             style={{ color: "#4a90e2", fontSize: "18px" }}
           />
-          <span className={styles.price}>{el.price}</span>
+          <span className={styles.price}>{el.price === 1 ? "Бесплатно!": el.price}</span>
         </div>
         <div className={styles.date}>
           <FontAwesomeIcon
