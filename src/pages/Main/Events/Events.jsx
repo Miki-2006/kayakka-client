@@ -52,7 +52,7 @@ const Events = ({ selectedCategory }) => {
               <Card el={el} />
             </Link>
           ))
-        : <div className={styles.sceleton}><b className={styles.notData}>Здесь нету мероприятий</b></div>}
+        : <div className={styles.notDataContainer}><b className={styles.notData}>Здесь нету мероприятий</b></div>}
     </div>
   );
 };

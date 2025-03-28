@@ -6,6 +6,9 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 5px;
 }
+.notDataContainer{
+    max-width: 980px;
+}
 .notData{
     color: #4a90e2;
     font-size: 25px;
