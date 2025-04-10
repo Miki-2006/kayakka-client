@@ -1,14 +1,17 @@
 import styles from "./card.module.css";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarDays,
   faMoneyBill1,
   faTicket,
-  faLocationDot
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 const Card = ({ el }) => {
-  
+  const [image, setImage] = useState(null);
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
 
@@ -24,9 +27,26 @@ const Card = ({ el }) => {
     return date.toLocaleString("en-US", options).replace(",", " •");
   };
 
+  useEffect(() => {
+    const fetchImageFromStorage = async (title) => {
+      try {
+        const res = await axios.get(
+          `https://kayakka-server.vercel.app/api/images/${title}.jpg`,
+          { responseType: "blob" }
+        );
+        const url = URL.createObjectURL(res.data);        
+        setImage(url);
+      } catch (err) {
+        console.error("Ошибка при запросе изображения");
+      }
+
+    };
+    fetchImageFromStorage(el.title)
+  }, [el.title]);
+
   return (
     <div className={styles.card}>
-      <img src={el.image} alt={el.title} />
+      <img src={image ? image : ''} alt={el.title} />
       <div className={styles.card_bottom}>
         <div className={styles.event}>
           <FontAwesomeIcon
@@ -40,7 +60,9 @@ const Card = ({ el }) => {
             icon={faMoneyBill1}
             style={{ color: "#4a90e2", fontSize: "18px" }}
           />
-          <span className={styles.price}>{el.price === 1 ? "Бесплатно!": el.price}</span>
+          <span className={styles.price}>
+            {el.price === 1 ? "Бесплатно!" : el.price}
+          </span>
         </div>
         <div className={styles.date}>
           <FontAwesomeIcon

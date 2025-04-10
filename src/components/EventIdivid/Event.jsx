@@ -1,7 +1,7 @@
 import axios from "axios";
 import styles from "./event.module.css";
 import responsiveStyles from "./eventAdapt.module.css"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchEventFailure,
@@ -27,6 +27,7 @@ const Event = () => {
   const dispatch = useDispatch();
   const { event, loading } = useSelector((state) => state.event);
   const eventData = event[0];
+  const [image, setImage] = useState(null)
 
   useEffect(() => {
     const getEventById = async () => {
@@ -46,6 +47,23 @@ const Event = () => {
     getEventById();
   }, [dispatch, id]);
 
+  useEffect(() => {
+    const fetchImageFromStorage = async (title) => {
+      try {
+        const res = await axios.get(
+          `https://kayakka-server.vercel.app/api/images/${title}.jpg`,
+          { responseType: "blob" }
+        );
+        const url = URL.createObjectURL(res.data);
+        setImage(url);
+      } catch (err) {
+        console.error("Ошибка при запросе изображения");
+      }
+
+    };
+    fetchImageFromStorage(eventData?.title)
+  }, [eventData?.title]);
+
   if(loading) return <div className={styles.loader}><ScaleLoader color="#5669ff"/></div>
 
   return (
@@ -53,7 +71,7 @@ const Event = () => {
       <div className={`${styles.ticketContainer} ${responsiveStyles.ticketContainer}`}>
         <div className={`${styles.ticketLeft} ${responsiveStyles.ticketLeft}`}>
           <img
-            src={eventData?.image}
+            src={image ? image : ''}
             alt={eventData?.title}
             className={`${styles.ticketImage} ${responsiveStyles.ticketImage}`}
           />
