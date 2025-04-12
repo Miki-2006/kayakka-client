@@ -48,10 +48,10 @@ const Event = () => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    const fetchImageFromStorage = async (title) => {
+    const fetchImageFromStorage = async (imageName) => {
       try {
         const res = await axios.get(
-          `https://kayakka-server.vercel.app/api/images/${title}.jpg`,
+          `https://kayakka-server.vercel.app/api/images/${imageName}`,
           { responseType: "blob" }
         );
         const url = URL.createObjectURL(res.data);
@@ -61,8 +61,10 @@ const Event = () => {
       }
 
     };
-    fetchImageFromStorage(eventData?.title)
-  }, [eventData?.title]);
+    if (eventData?.nameOfImage) {
+      fetchImageFromStorage(eventData?.nameOfImage)
+    }
+  }, [eventData?.nameOfImage]);
 
   if(loading) return <div className={styles.loader}><ScaleLoader color="#5669ff"/></div>
 
