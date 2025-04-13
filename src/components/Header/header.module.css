@@ -46,7 +46,7 @@
   align-items: center;      /* Выравнивание по вертикали */
   background-color: #4f4cee; /* Цвет фона круга */
   color: white;        /* Цвет текста (буквы) */
-  font-size: 20px;      /* Размер шрифта */
+  font-size: 1.4vw;      /* Размер шрифта */
   font-weight: bold;    /* Толщина шрифта */
   text-decoration: none;
 }

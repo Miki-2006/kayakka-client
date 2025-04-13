@@ -47,7 +47,7 @@ const Card = ({ el }) => {
 
   return (
     <div className={styles.card}>
-      <img src={image ? image : ""} alt={el.title} />
+      {image ? <img src={image} alt={el.title} className={styles.img}/> : <div className={styles.img}></div>}
       <div className={styles.card_bottom}>
         <div className={styles.event}>
           <FontAwesomeIcon
