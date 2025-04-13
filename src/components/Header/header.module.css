@@ -11,7 +11,7 @@
 }
 
 .tytle {
-  font-size: 1.6vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
+  font-size: 1.4vh; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
   text-align: center;
   /* margin-top: 16px; */
   color: #4f4cee;
@@ -21,7 +21,7 @@
   gap: 0.5vw;
 }
 .link {
-  font-size: 1.1vw;
+  font-size: 1.4vw;
   font-weight: 600; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
   color: #007bff;
   text-decoration: none;
@@ -46,7 +46,7 @@
   align-items: center;      /* Выравнивание по вертикали */
   background-color: #4f4cee; /* Цвет фона круга */
   color: white;        /* Цвет текста (буквы) */
-  font-size: 1.4vw;      /* Размер шрифта */
+  font-size: 1.4vh;      /* Размер шрифта */
   font-weight: bold;    /* Толщина шрифта */
   text-decoration: none;
 }
