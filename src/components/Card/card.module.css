@@ -13,7 +13,7 @@
   box-shadow: 0px 0px 10px #5669ff;
   scale: 1.01;
 }
-.card img {
+.img {
   width: 200px;
   height: 300px;
   object-fit: cover;
@@ -40,7 +40,7 @@
   .card {
     gap: 8px;
   }
-  .card img {
+  .img {
     width: 180px;
     height: 260px;
   }
@@ -61,7 +61,7 @@
   .card {
     gap: 5px;
   }
-  .card img {
+  .img {
     width: 150px;
     height: 200px;
   }
@@ -76,5 +76,14 @@
   }
   .location span {
     margin-left: 8px;
+  }
+}
+@media (max-width: 380px) {
+  .card{
+    gap: 3px;
+  }
+  .img {
+    width: 130px;
+    height: 170px;
   }
 }
