@@ -23,7 +23,7 @@ function App() {
     <div className="App">
 
       <Header user={user}/>
-      <Main />
+      { <Main /> }
       <Footer />
 
     </div>
