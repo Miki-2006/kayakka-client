@@ -21,9 +21,12 @@
 .contact {
   margin-bottom: 15px;
 }
+.contact p{
+  font-size: 11px;
+}
 
 .text {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -31,6 +34,7 @@
 .link {
   color: #4ea8de;
   text-decoration: none;
+  font-size: 11px;
 }
 
 .link:hover {
@@ -58,7 +62,7 @@
 }
 
 .title {
-  font-size: 1.5vw; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
+  font-size: 1.5vh; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
   text-align: center;
   /* margin-top: 16px; */
   color: white;

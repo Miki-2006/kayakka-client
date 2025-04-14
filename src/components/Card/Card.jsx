@@ -28,25 +28,26 @@ const Card = ({ el }) => {
   };
 
   useEffect(() => {
-    const fetchImageFromStorage = async (title) => {
+    const fetchImageFromStorage = async (imageName) => {
       try {
         const res = await axios.get(
-          `https://kayakka-server.vercel.app/api/images/${title}.jpg`,
+          `https://kayakka-server.vercel.app/api/images/${imageName}`,
           { responseType: "blob" }
         );
-        const url = URL.createObjectURL(res.data);        
+        const url = URL.createObjectURL(res.data);
         setImage(url);
       } catch (err) {
         console.error("Ошибка при запросе изображения");
       }
-
     };
-    fetchImageFromStorage(el.title)
-  }, [el.title]);
+    if (el?.nameOfImage) {
+      fetchImageFromStorage(el.nameOfImage);
+    }
+  }, [el?.nameOfImage]);
 
   return (
     <div className={styles.card}>
-      <img src={image ? image : ''} alt={el.title} />
+      {image ? <img src={image} alt={el.title} className={styles.img}/> : <div className={styles.img}></div>}
       <div className={styles.card_bottom}>
         <div className={styles.event}>
           <FontAwesomeIcon
