@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import { ScaleLoader } from "react-spinners";
@@ -37,6 +37,7 @@ function App() {
     <>
       <Header user={user} />
       <Routes>
+        <Route path="/" element={<Navigate to="/events" replace />} />
         <Route path="/events" element={<Main />}>
           <Route path=":selectedCategory" element={<Events />} />
           <Route path="cinema" element={<Cinema />}>
