@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styles from "./categories.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -31,18 +31,18 @@ const CategoriesOfEvents = () => {
     getCategoriesFromServer();
   }, [dispatch]);
 
-  const handleCategoryClick = (selectedCategory, index) => {
+  const handleCategoryClick = useCallback((selectedCategory, index) => {
     if (selectedCategory === 24) {
       navigate("/events/cinema/cinemas");
     } else {
       navigate(`/events/${selectedCategory}`);
     } // Передаем выбранную категорию в родительский компонент
     setActiveIndex(index);
-  };
+  }, [navigate])
 
   useEffect(() => {
     handleCategoryClick("все", null);
-  }, []);
+  }, [handleCategoryClick]);
 
   return (
     <ul className={styles.categories}>
