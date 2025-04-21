@@ -1,6 +1,6 @@
 .categories {
   display: flex;
-  background: #fff;
+  background: #9AFEFF;
   border-radius: 20px;
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -20,7 +20,7 @@
   position: relative;
   padding: 12px 20px;
   cursor: pointer;
-  color: #333;
+  color: #6C00F1;
   font-weight: 600;
   font-size: 1.3vh;
   border-radius: 12px;
@@ -30,12 +30,12 @@
 
 .category:hover {
   color: #fff;
-  background: #4a90e2;
+  background: #6C00F1;
 }
 
 .active {
   color: #fff;
-  background: #4a90e2;
+  background: #6C00F1;
   transform: scale(1.05);
 }
 

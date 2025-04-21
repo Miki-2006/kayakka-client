@@ -7,8 +7,10 @@ import {
   fetchCategoriesStart,
   fetchCategoriesFailure,
 } from "../../../features/categorySlice";
+import { useNavigate } from "react-router";
 
-const CategoriesOfEvents = ({ setSelectedCategory }) => {
+const CategoriesOfEvents = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { categories } = useSelector((state) => state.categories);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -29,10 +31,18 @@ const CategoriesOfEvents = ({ setSelectedCategory }) => {
     getCategoriesFromServer();
   }, [dispatch]);
 
-  const handleCategoryClick = (categoryId, index) => {
-    setSelectedCategory(categoryId); // Передаем выбранную категорию в родительский компонент
+  const handleCategoryClick = (selectedCategory, index) => {
+    if (selectedCategory === 24) {
+      navigate("/events/cinema/cinemas");
+    } else {
+      navigate(`/events/${selectedCategory}`);
+    } // Передаем выбранную категорию в родительский компонент
     setActiveIndex(index);
   };
+
+  useEffect(() => {
+    handleCategoryClick("все", null);
+  }, []);
 
   return (
     <ul className={styles.categories}>
@@ -40,7 +50,7 @@ const CategoriesOfEvents = ({ setSelectedCategory }) => {
         className={`${styles.category} ${
           activeIndex === null ? styles.active : ""
         }`}
-        onClick={() => handleCategoryClick(null, null)}
+        onClick={() => handleCategoryClick("все", null)}
       >
         Все
       </li>

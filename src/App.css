@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap");
-body {
-  margin: 0 auto;
+html, body {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  background: #6C00F1; /* Пример твоего цвета */
+}
+body {
   display: flex;
   justify-content: center;
-  font-family: "Manrope", sans-serif;
+  align-items: center;
 }
 .loader {
   width: 100vw;

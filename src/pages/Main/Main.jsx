@@ -1,16 +1,14 @@
-import { useState } from "react";
 import CategoriesOfEvents from "./Categories/CategoriesOfEvents";
-import Events from "./Events/Events";
 import styles from "./main.module.css";
+import { Outlet } from "react-router";
 
 const Main = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <CategoriesOfEvents setSelectedCategory={setSelectedCategory}/>
-        <Events selectedCategory={selectedCategory}/>
+        <CategoriesOfEvents/>
+        <Outlet/>
       </div>
     </main>
   );

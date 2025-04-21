@@ -1,5 +1,4 @@
 .header {
-  background-color: #fff;
   padding: 0px 2%;
   max-width: 980px;
   border-bottom: 0.1px solid #f4efef;
@@ -14,7 +13,7 @@
   font-size: 1.4vh; /* Тексттин өлчөмүн экрандын туурасына жараша жасоо */
   text-align: center;
   /* margin-top: 16px; */
-  color: #4f4cee;
+  color: #FFFCFC;
 }
 .nav {
   display: flex;
@@ -44,8 +43,8 @@
   display: flex;
   justify-content: center;  /* Выравнивание по горизонтали */
   align-items: center;      /* Выравнивание по вертикали */
-  background-color: #4f4cee; /* Цвет фона круга */
-  color: white;        /* Цвет текста (буквы) */
+  background-color: #9AFEFF; /* Цвет фона круга */
+  color: #6C00F1;        /* Цвет текста (буквы) */
   font-size: 1.4vh;      /* Размер шрифта */
   font-weight: bold;    /* Толщина шрифта */
   text-decoration: none;

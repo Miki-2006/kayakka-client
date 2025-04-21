@@ -1,14 +1,3 @@
-/* Глобальные стили */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #ffffff, #f3f4f6);
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
 /* Основной контейнер */
 .login_container {
   display: flex;

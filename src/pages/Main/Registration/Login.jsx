@@ -14,7 +14,7 @@ const Login = () => {
   const navigate = useNavigate(); // Инициализируем useNavigate
 
   const navClick = () => {
-    navigate("/")
+    navigate("/events")
   }
 
   const handleSubmit = async (e) => {
@@ -96,7 +96,7 @@ const Login = () => {
         {/* Ссылка на регистрацию */}
         <p className={styles.signup_text}>
           У вас нет учетной записи?{" "}
-          <a href="/signin" className={styles.signup_link}>
+          <a href="/dashboard/signin" className={styles.signup_link}>
             Зарегистрироваться
           </a>
         </p>

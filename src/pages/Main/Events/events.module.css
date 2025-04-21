@@ -8,6 +8,7 @@
 }
 .notDataContainer{
     max-width: 980px;
+    height: 80vh;
 }
 .notData{
     color: #4a90e2;

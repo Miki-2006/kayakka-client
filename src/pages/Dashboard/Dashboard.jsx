@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import styles from "./dashboard.module.css";
 import { useEffect, useState } from "react";
 import { logout } from "../../features/authSlice";
@@ -25,7 +25,7 @@ const Dashboard = () => {
 
     if (!user) {
       // Если пользователь не найден в localStorage, перенаправляем на страницу входа
-      navigate("/login");
+      navigate("/dashboard/login");
     }
   }, [user, navigate]); // Зависимости: следим за изменением user
 
@@ -34,7 +34,7 @@ const Dashboard = () => {
     dispatch(logout()); // Отправляем действие для выхода
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    navigate("/login"); // Перенаправляем на страницу входа
+    navigate("/dashboard/login"); // Перенаправляем на страницу входа
   };
 
   if (user === null) {
@@ -43,7 +43,7 @@ const Dashboard = () => {
   }
 
   const handleAdd = () => {
-    navigate("/add");
+    navigate("/event/addEvent");
   };
 
   return (
@@ -67,6 +67,7 @@ const Dashboard = () => {
           Выход
         </button>
       </div>
+      <Outlet/>
     </div>
   );
 };

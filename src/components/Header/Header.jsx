@@ -9,20 +9,20 @@ const Header = ({user}) => {
   }
 
   const navClick = () => {
-    navigate("/")
+    navigate("/events/все")
   }
 
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <h1 className={styles.tytle} onClick={navClick}> Kayakka</h1>
+        <h1 className={styles.tytle} onClick={navClick}>Kayakka</h1>
         <nav className={styles.nav}>
           {
             user !== null
             ?
             <div className={styles.circle} onClick={clickHandle}>{user?.f_name?.charAt(0)?.toUpperCase()}</div>
             :
-            <a className={styles.link} href="/login">Войти </a>
+            <a className={styles.link} href="/dashboard/login">Войти </a>
           }
         </nav>
       </div>
