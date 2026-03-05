@@ -1,0 +1,23 @@
+.cinemas{
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1vw;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    background: transparent;
+    cursor: pointer;
+}
+.cinema{
+    padding: 5px 10px;
+    background-color: #FFFCFC;
+    border-radius: 10px;
+    text-align: center;
+    color: #6C00F1;
+}
+.cinema:hover{
+    background-color: #9AFEFF;
+}
+.active{
+    background-color: #9AFEFF;
+    transform: scale(1.05);
+}
